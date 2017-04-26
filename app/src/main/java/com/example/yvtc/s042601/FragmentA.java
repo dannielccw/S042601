@@ -2,6 +2,7 @@ package com.example.yvtc.s042601;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,4 +40,18 @@ public class FragmentA extends Fragment {
         return v;
     }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Button btn2 = (Button) getActivity().findViewById(R.id.button2);
+        final TextView tv2 = (TextView) getActivity().findViewById(R.id.textView2);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv2.setText("TTTTT");
+
+            }
+        });
+
+    }
 }
